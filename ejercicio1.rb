@@ -15,9 +15,13 @@ def generar_2_parrafos(string1, string2)
 end
 
 def generar_lista_parrafos(listado)
-  parrafos = ''
-  listado.each { |v| parrafos += "<p>#{v}</p>\n" }
-  crearHTML('listado_parrafos.html', parrafos)
+  if listado.length.zero?
+    puts 'El arreglo está vacío.'
+  else
+    parrafos = ''
+    listado.each { |v| parrafos += "<p>#{v}</p>\n" }
+    crearHTML('listado_parrafos.html', parrafos)
+  end
 end
 
 def generar_lista_parrafos_coloridos(listado, color)
